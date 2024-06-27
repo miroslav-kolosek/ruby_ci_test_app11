@@ -95,5 +95,21 @@ RSpec.describe Article, type: :model do
         expect(Article.public_count).to eq 7
       end
     end
+
+    describe "#public_count 8" do
+      let!(:article_1) { Article.create!(title: 'Article 1', body: 'article 1111111', status: 'public') }
+      let!(:article_2) { Article.create!(title: 'Article 2', body: 'article 22222222', status: 'private') }
+      let!(:article_3) { Article.create!(title: 'Article 3', body: 'article 33333333', status: 'public') }
+      let!(:article_4) { Article.create!(title: 'Article 4', body: 'article 44444444', status: 'public') }
+      let!(:article_5) { Article.create!(title: 'Article 5', body: 'article 55555555', status: 'public') }
+      let!(:article_6) { Article.create!(title: 'Article 6', body: 'article 66666666', status: 'public') }
+      let!(:article_7) { Article.create!(title: 'Article 7', body: 'article 77777777', status: 'public') }
+      let!(:article_8) { Article.create!(title: 'Article 8', body: 'article 88888888', status: 'public') }
+      let!(:article_9) { Article.create!(title: 'Article 9', body: 'article 99999999', status: 'public') }
+
+      it do
+        expect(Article.public_count).to eq 8
+      end
+    end
   end
 end
