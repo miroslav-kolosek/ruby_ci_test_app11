@@ -30,5 +30,16 @@ RSpec.describe Article, type: :model do
         expect(Article.public_count).to eq 2
       end
     end
+
+    describe "#public_count 3" do
+      let!(:article_1) { Article.create!(title: 'Article 1', body: 'article 1111111', status: 'public') }
+      let!(:article_2) { Article.create!(title: 'Article 2', body: 'article 22222222', status: 'private') }
+      let!(:article_3) { Article.create!(title: 'Article 3', body: 'article 33333333', status: 'public') }
+      let!(:article_4) { Article.create!(title: 'Article 4', body: 'article 44444444', status: 'public') }
+
+      it do
+        expect(Article.public_count).to eq 3
+      end
+    end
   end
 end
