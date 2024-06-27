@@ -185,5 +185,26 @@ RSpec.describe Article, type: :model do
         expect(Article.public_count).to eq 12
       end
     end
+
+    describe "#public_count 13" do
+      let!(:article_1) { Article.create!(title: 'Article 1', body: 'article 1111111', status: 'public') }
+      let!(:article_2) { Article.create!(title: 'Article 2', body: 'article 22222222', status: 'private') }
+      let!(:article_3) { Article.create!(title: 'Article 3', body: 'article 33333333', status: 'public') }
+      let!(:article_4) { Article.create!(title: 'Article 4', body: 'article 44444444', status: 'public') }
+      let!(:article_5) { Article.create!(title: 'Article 5', body: 'article 55555555', status: 'public') }
+      let!(:article_6) { Article.create!(title: 'Article 6', body: 'article 66666666', status: 'public') }
+      let!(:article_7) { Article.create!(title: 'Article 7', body: 'article 77777777', status: 'public') }
+      let!(:article_8) { Article.create!(title: 'Article 8', body: 'article 88888888', status: 'public') }
+      let!(:article_9) { Article.create!(title: 'Article 9', body: 'article 99999999', status: 'public') }
+      let!(:article_10) { Article.create!(title: 'Article 10', body: 'article 10', status: 'public') }
+      let!(:article_11) { Article.create!(title: 'Article 11', body: 'article 11', status: 'public') }
+      let!(:article_12) { Article.create!(title: 'Article 12', body: 'article 12', status: 'public') }
+      let!(:article_13) { Article.create!(title: 'Article 13', body: 'article 13', status: 'public') }
+      let!(:article_14) { Article.create!(title: 'Article 14', body: 'article 14', status: 'public') }
+
+      it do
+        expect(Article.public_count).to eq 13
+      end
+    end
   end
 end
